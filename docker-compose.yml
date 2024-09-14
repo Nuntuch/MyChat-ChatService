@@ -8,7 +8,7 @@ services:
       context: ./chatservice           # Path to the build context
       dockerfile: Dockerfile # Name of the Dockerfile
     ports:
-      - "8460:8460"
+      - "8080:8460"
     volumes:
       - ./chatservice:/app
     depends_on:
@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydatabase
     ports:
-      - "5446:5432"
+      - "5480:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:

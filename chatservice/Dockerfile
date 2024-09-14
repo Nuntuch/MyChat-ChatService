@@ -26,7 +26,7 @@ WORKDIR /app
 COPY --from=build /app/target/chatservice-0.0.1-SNAPSHOT.jar /chatservice.jar
 
 # Expose the application port
-EXPOSE 8046
+EXPOSE 8080
 
 # Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "/chatservice.jar"]
