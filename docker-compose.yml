@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  mychat-service:
+    container_name: spring_boot_mychat_chat_service
+    build:
+      context: ./chatservice           # Path to the build context
+      dockerfile: Dockerfile # Name of the Dockerfile
+    ports:
+      - "8460:8460"
+    volumes:
+      - ./chatservice:/app
+    depends_on:
+      - mychat-chat-service-db
+#    environment:
+#      - FLASK_ENV=development
+
+  mychat-chat-service-db:
+    image: postgres:15
+    container_name: postgres_mychat_chat_service_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5446:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+volumes:
+  postgres_data:
+
+networks:
+  mynetwork:
+    driver: bridge
+
+#      - 8080:8080  #containner port :app port
