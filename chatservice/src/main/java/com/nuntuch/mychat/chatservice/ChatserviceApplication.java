@@ -1,4 +1,4 @@
-package com.nuntuch.mychat;
+package com.nuntuch.mychat.chatservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

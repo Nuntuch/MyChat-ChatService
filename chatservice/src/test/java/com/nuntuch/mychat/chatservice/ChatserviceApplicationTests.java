@@ -1,4 +1,4 @@
-package com.nuntuch.mychat;
+package com.nuntuch.mychat.chatservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
