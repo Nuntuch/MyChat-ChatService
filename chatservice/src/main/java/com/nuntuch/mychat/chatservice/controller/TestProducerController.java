@@ -16,7 +16,10 @@ public class TestProducerController {
     @GetMapping(path = "/test/producer")
     public String testProducer(){
 
-        kafkaProducer.sendMessage("Hello world!!!");
+        kafkaProducer.sendMessage("news","naijab.com is comming soon!!!");
+
+        kafkaProducer.sendMessage("my-topic","Hello world!!!");
+
 
         return "Hello Jabs";
     }
