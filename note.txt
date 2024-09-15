@@ -1,9 +1,0 @@
-podman logs -f spring_boot_mychat_chat_service
-
-podman compose up -d --build
-
-podman compose stop mychat-service
-
-podman compose ps
-
-podman ps
